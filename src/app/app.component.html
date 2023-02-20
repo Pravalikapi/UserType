@@ -1,0 +1,20 @@
+<h1 class="page">Welcome</h1> 
+<form (ngSubmit)="onSubmit()" class="page">
+  <label for="userType">User Type:</label>
+  <select id="userType" name="userType" [(ngModel)]="userType">
+    <option value="admin">Admin</option>
+    <option value="normal">Normal</option>
+  </select>
+  <button type="submit"  class="button">Submit</button>
+</form>
+<div *ngIf="linksVisible" class="page">
+  
+  <a *ngIf="userType == 'admin'" routerLink="/add-server">Add Server</a><br/>
+  <a *ngIf="userType == 'admin'" routerLink="/delete-server">Delete Server</a><br/>
+  <a *ngIf="userType == 'admin'" routerLink="/edit-server">Edit Server</a><br/>
+  <a routerLink="/view-weather-forecast">View Weather Forecast</a><br/>
+  <a routerLink="/view-news">View News</a>
+ 
+
+</div>
+<router-outlet></router-outlet>
